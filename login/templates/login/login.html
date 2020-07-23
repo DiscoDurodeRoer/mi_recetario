@@ -2,10 +2,48 @@
 
 {% block content %}
 
-    <div class="row">
-        <div class="col-12">
-            Login
-        </div>
+<div class="row">
+    <div class="col-12">
+
+        <form method="POST">
+
+            {% if msg_error is not None %}
+            <div class="alert alert-danger" role="alert">
+                <strong>{{msg_error}}</strong>
+            </div>
+            {% endif %}
+            {% csrf_token %}
+            <div class="row form-group">
+                <div class="col-12">
+                    <label for="user">Usuario</label>
+                    {{form.user}}
+                </div>
+                {{form.user.errors}}
+            </div>
+
+            <div class="row form-group">
+                <div class="col-12">
+                    <label for="password">Contraseña</label>
+                    {{form.password}}
+                </div>
+                {{form.password.errors}}
+            </div>
+
+            <div class="row form-group">
+                <div class="col-md-6 col-12">
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </div>
+                
+                <div class="col-md-6 col-12">
+                    <button type="submit" class="btn btn-primary btn-block">Volver</button>
+                </div>
+            </div>
+
+        </form>
+
+
+
     </div>
+</div>
 
 {% endblock %}

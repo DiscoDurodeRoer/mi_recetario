@@ -15,7 +15,11 @@
 
     {% include 'core/header.html' %}
 
-    {% block content %} {% endblock %}
+    <div class="row">
+        <div class="col-12 p-5">
+            {% block content %} {% endblock %}
+        </div>
+    </div>
 
     {% include 'core/footer.html' %}
 
