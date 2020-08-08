@@ -7,16 +7,16 @@
 
         <form method="POST">
 
-            {% if msg_error is not None %}
+            <!-- {% if msg_error is not None %}
             <div class="alert alert-danger" role="alert">
                 <strong>{{msg_error}}</strong>
             </div>
-            {% endif %}
+            {% endif %} -->
             {% csrf_token %}
             <div class="row form-group">
                 <div class="col-12">
-                    <label for="user">Usuario</label>
-                    {{form.user}}
+                    <label for="username">Usuario</label>
+                    {{form.username}}
                 </div>
                 {{form.user.errors}}
             </div>
@@ -30,18 +30,14 @@
             </div>
 
             <div class="row form-group">
-                <div class="col-md-6 col-12">
+                <div class="col-12">
                     <button type="submit" class="btn btn-primary btn-block">Login</button>
-                </div>
-                
-                <div class="col-md-6 col-12">
-                    <button type="submit" class="btn btn-primary btn-block">Volver</button>
                 </div>
             </div>
 
         </form>
 
-
+        <a href="{% url 'register' %}">¿No tienes una cuenta? Create una desde este enlace.</a>
 
     </div>
 </div>

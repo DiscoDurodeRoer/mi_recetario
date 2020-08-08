@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row form-group">
+                <div class="col-12">
+                    <label for="username">Usuario</label>
+                    {{form.username}}
+                </div>
+                {{form.user.errors}}
+            </div>
+
+            <div class="row form-group">
+                <div class="col-12">
+                    <label for="password">Contraseña</label>
+                    {{form.password1}}
+                </div>
+                {{form.password1.errors}}
+            </div>
+
+            <div class="row form-group">
+                <div class="col-12">
+                    <label for="password">Repite tu contraseña</label>
+                    {{form.password2}}
+                </div>
+                {{form.password2.errors}}
+            </div>
+
+            <div class="row form-group">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-block">Registro</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
